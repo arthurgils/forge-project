@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bokukhkkpis58"]
+
+[ext_resource type="Script" uid="uid://d0f44klyl678d" path="res://Scripts/module_drop.gd" id="1_fqtso"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fqtso"]
+specular_color = Color(0.98819846, 0.32672873, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc6vj"]
+
+[node name="ModuleDrop" type="Area2D"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_fqtso")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_fqtso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fc6vj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

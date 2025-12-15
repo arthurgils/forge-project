@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl638e6n5avxd"]
+
+[ext_resource type="Script" uid="uid://bxwsp31725fhj" path="res://Scripts/weapon.gd" id="1_er6cq"]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_er6cq")
+
+[node name="FireTimer" type="Timer" parent="."]

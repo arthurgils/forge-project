@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponModule" load_steps=3 format=3 uid="uid://bvwjpqsvyajsp"]
+
+[ext_resource type="Script" uid="uid://d4hqeye8q7r10" path="res://Scenes/weapon_module.gd" id="1_e7fsu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e7fsu"]
+specular_color = Color(0.902515, 0.0006892324, 0.9080785, 1)
+
+[resource]
+script = ExtResource("1_e7fsu")
+module_name = "ScatterBarrel"
+projectiles_add = 2
+spread_add = 20.0
+icon = SubResource("CanvasTexture_e7fsu")
+metadata/_custom_type_script = "uid://d4hqeye8q7r10"

@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciwe7ut8jq0ln"]
+
+[ext_resource type="Script" uid="uid://bb8lsk1yy7dvi" path="res://Scripts/hud.gd" id="1_e0onf"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_e0onf")
+
+[node name="Health" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 560.0
+offset_right = 100.0
+offset_bottom = 583.0
+text = "Health: "
+
+[node name="Level" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 600.0
+offset_right = 80.0
+offset_bottom = 623.0
+text = "Level: 1"
+
+[node name="XpBar" type="ProgressBar" parent="."]
+offset_left = 229.0
+offset_top = 597.0
+offset_right = 895.0
+offset_bottom = 624.0
+
+[node name="Timer" type="Label" parent="."]
+offset_left = 1032.0
+offset_top = 29.0
+offset_right = 1113.0
+offset_bottom = 74.0
+
+[node name="Kills" type="Label" parent="."]
+offset_left = 1070.0
+offset_top = 71.0
+offset_right = 1110.0
+offset_bottom = 94.0

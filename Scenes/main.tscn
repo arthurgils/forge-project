@@ -1,0 +1,22 @@
+[gd_scene load_steps=8 format=3 uid="uid://stkml3k28ks5"]
+
+[ext_resource type="Script" uid="uid://d3knro3b04aeb" path="res://Scripts/main.gd" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://ddid6lwwp6em7" path="res://Scenes/player.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://cie8k7aptvlbt" path="res://Scenes/enemy.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://buycfaob1g3yw" path="res://Scenes/world_manager.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://n2nlltnlk8nw" path="res://Scenes/ground_1.tscn" id="5_21xkr"]
+[ext_resource type="PackedScene" uid="uid://cwsrb7h36a6d2" path="res://Scenes/ground_2.tscn" id="6_6bp64"]
+[ext_resource type="PackedScene" uid="uid://ciwe7ut8jq0ln" path="res://Scenes/hud.tscn" id="7_6bp64"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8gbba")
+
+[node name="Player" parent="." instance=ExtResource("1_bo1nx")]
+
+[node name="Enemy" parent="." instance=ExtResource("2_8gbba")]
+position = Vector2(594, 275)
+
+[node name="WorldManager" parent="." instance=ExtResource("4_jjvhh")]
+ground_scenes = Array[PackedScene]([ExtResource("5_21xkr"), ExtResource("6_6bp64")])
+
+[node name="HUD" parent="." instance=ExtResource("7_6bp64")]
