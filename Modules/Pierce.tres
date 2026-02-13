@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponModule" load_steps=3 format=3 uid="uid://ceuy6uv4cruqj"]
+
+[ext_resource type="Script" uid="uid://d4hqeye8q7r10" path="res://Scenes/weapon_module.gd" id="1_iv4fa"]
+[ext_resource type="Texture2D" uid="uid://ibpn7tehwrq4" path="res://Assets/pierce_module.png" id="1_j1p0u"]
+
+[resource]
+script = ExtResource("1_iv4fa")
+module_name = "Pierce"
+rarity = 1
+pierce_add = 1
+icon = ExtResource("1_j1p0u")
+metadata/_custom_type_script = "uid://d4hqeye8q7r10"

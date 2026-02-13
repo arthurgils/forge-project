@@ -19,6 +19,7 @@ signal level_up(new_level: int, xp: float, xp_to_next: float)
 #Weapon Configs
 @onready var weapon = $Weapon
 
+#var shot_scene = preload("res://Scenes/shot.tscn")
 
 func _ready():
 	if level == null or level <= 0:
@@ -57,7 +58,7 @@ func _physics_process(delta):
 	#shot.direction = direction
 	#
 	#get_tree().current_scene.add_child(shot)
-	
+	#
 
 # === AUTOMATIC SHOOT ===
 
@@ -66,7 +67,6 @@ func _on_fire_timer_timeout():
 	if enemy == null:
 		return
 	weapon.fire(self, enemy)
-
 
 
 func get_nearest_enemy() -> Node2D:
@@ -90,7 +90,7 @@ func get_nearest_enemy() -> Node2D:
 			nearest_enemy = enemy
 	
 	return nearest_enemy
-	
+
 
 func _get_camera_rect() -> Rect2:
 	var viewport := get_viewport()
@@ -108,7 +108,7 @@ func _get_camera_rect() -> Rect2:
 func _is_enemy_on_screen(enemy: Node2D) -> bool:
 	var cam_rect := _get_camera_rect()
 	return cam_rect.has_point(enemy.global_position)
-	
+
 
 func xp_required_for_level(level: int) -> float:
 	var base = 40.0

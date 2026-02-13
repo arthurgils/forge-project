@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddid6lwwp6em7"]
 
 [ext_resource type="Script" uid="uid://y4i6x04smvrj" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://kvkmia4urcrr" path="res://Assets/drone.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://des35tjbr4ojq" path="res://Assets/character1.png" id="2_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://bl638e6n5avxd" path="res://Scenes/weapon.tscn" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0iea"]
@@ -14,9 +14,9 @@ collision_mask = 24
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(32, 32)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_cvnsp")
+position = Vector2(31, 31)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("2_6t5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(32, 32)

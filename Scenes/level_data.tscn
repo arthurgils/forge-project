@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6qb53h3jbxb3"]
+
+[ext_resource type="Script" uid="uid://b5kvvbxp0sw83" path="res://Scripts/level_data.gd" id="1_72eum"]
+
+[node name="LevelData" type="ResourcePreloader"]
+script = ExtResource("1_72eum")

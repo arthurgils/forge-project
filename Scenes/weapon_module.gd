@@ -1,5 +1,4 @@
 extends Resource
-
 class_name WeaponModule
 
 @export var module_name: String = "default"
@@ -10,5 +9,10 @@ class_name WeaponModule
 @export var projectiles_add: int = 0
 @export var spread_add: float = 0.0
 @export var fire_rate_mult: float = 1.0
+
+@export var fork_add: int = 0
+@export var fork_angle_add: float = 0.0
+
+@export var pierce_add: int = 0
 
 @export var icon: Texture2D

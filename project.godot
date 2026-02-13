@@ -15,6 +15,10 @@ run/main_scene="uid://stkml3k28ks5"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[editor]
+
+movie_writer/movie_file="D:/Game Dev/pre-prod-project/VideoLogs/log.mp4"
+
 [input]
 
 Right={

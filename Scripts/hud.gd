@@ -14,7 +14,9 @@ func _ready():
 	if player:
 		player.xp_changed.connect(_on_player_xp_changed)
 		player.level_up.connect(_on_player_level_up)
+		
 	timer_label.text = "00:00"
+
 
 func _process(delta):
 	health_bar_label.text = "Health: " + str(player.health)

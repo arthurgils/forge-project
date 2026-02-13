@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponModule" load_steps=3 format=3 uid="uid://b4clpikq8m5kv"]
+
+[ext_resource type="Script" uid="uid://d4hqeye8q7r10" path="res://Scenes/weapon_module.gd" id="1_sgycp"]
+[ext_resource type="Texture2D" uid="uid://b1g7y4xicp8t4" path="res://Assets/fork_module.png" id="1_x5upj"]
+
+[resource]
+script = ExtResource("1_sgycp")
+module_name = "Fork"
+rarity = 1
+fork_add = 1
+fork_angle_add = 20.0
+icon = ExtResource("1_x5upj")
+metadata/_custom_type_script = "uid://d4hqeye8q7r10"

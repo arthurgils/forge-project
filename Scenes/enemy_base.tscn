@@ -1,12 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cie8k7aptvlbt"]
+[gd_scene load_steps=4 format=3 uid="uid://cie8k7aptvlbt"]
 
-[ext_resource type="Script" uid="uid://bj4c35qxh1g6b" path="res://Scripts/enemy.gd" id="1_1f0kj"]
-[ext_resource type="Texture2D" uid="uid://5lrqquj87bxy" path="res://icon.svg" id="1_hghv2"]
-[ext_resource type="Script" uid="uid://d4hqeye8q7r10" path="res://Scenes/weapon_module.gd" id="2_287tu"]
-[ext_resource type="Resource" uid="uid://bvwjpqsvyajsp" path="res://Modules/ScatterBarrel.tres" id="3_0830c"]
+[ext_resource type="Script" uid="uid://bj4c35qxh1g6b" path="res://Scripts/enemy_base.gd" id="1_x6wkx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_afpow"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_r040p"]
+radius = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0kj"]
 size = Vector2(128, 128)
@@ -16,20 +13,16 @@ z_index = 1
 position = Vector2(16, 16)
 collision_layer = 4
 collision_mask = 5
-script = ExtResource("1_1f0kj")
-enemy_damage = 2
-modules_pool = Array[ExtResource("2_287tu")]([ExtResource("3_0830c")])
+script = ExtResource("1_x6wkx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_hghv2")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_afpow")
+shape = SubResource("CircleShape2D_r040p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.25, 0.25)

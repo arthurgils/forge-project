@@ -10,6 +10,11 @@ extends Node2D
 @export var damage: float = 5.0
 @export var projectiles_speed: float = 200.0
 
+@export var fork_count = 0
+@export var fork_angle = 0.0
+
+@export var pierce_count = 0
+
 var modules: Array[WeaponModule] = []
 
 func fire(owner: Node2D, target: Node2D):
@@ -31,10 +36,13 @@ func fire(owner: Node2D, target: Node2D):
 		shot.direction = dir
 		shot.speed = projectiles_speed
 		shot.damage = damage
+		shot.fork_count = fork_count
+		shot.fork_angle = fork_angle
+		shot.pierce_count = pierce_count
 		
 		owner.get_tree().current_scene.add_child(shot)
-		
-		
+
+
 func apply_module(module: WeaponModule):
 	if module not in modules:
 		modules.append(module)
@@ -42,4 +50,8 @@ func apply_module(module: WeaponModule):
 		projectiles += module.projectiles_add
 		spread_deg += module.spread_add
 		projectiles_speed *= module.fire_rate_mult
+		fork_count += module.fork_add
+		fork_angle += module.fork_angle_add
+		pierce_count += module.pierce_add
+		
 	

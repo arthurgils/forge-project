@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cli0uc6da5vyv"]
+
+[ext_resource type="Script" uid="uid://pt42gr6l0wsy" path="res://Scripts/enemy_data.gd" id="1_od878"]
+
+[node name="EnemyData" type="ResourcePreloader"]
+script = ExtResource("1_od878")

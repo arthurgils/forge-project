@@ -15,8 +15,10 @@ func _ready():
 	player_ref = get_parent().get_node("Player")
 	_update_chunks()
 
+
 func _process(delta):
 	_update_chunks()
+
 
 func _update_chunks():
 	if not player_ref:
@@ -42,6 +44,7 @@ func _update_chunks():
 			#chunks_to_remove.append(chunk)
 	#for chunk in chunks_to_remove:
 		#loaded_chunks.erase(chunk)
+
 
 func _generate_chunk(chunk_pos: Vector2i):
 	var chunk_nodes = []
