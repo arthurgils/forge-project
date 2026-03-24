@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://dnotvsyo5jdl4"]
+
+[ext_resource type="Script" uid="uid://ciy8txa52ykd6" path="res://Scripts/smoke_area.gd" id="1_ptaf6"]
+[ext_resource type="Texture2D" uid="uid://bhmyqrviky2ci" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Smoke Animation Frames/Zombie-Tileset---_0321_Capa-322.png" id="2_aaoct"]
+[ext_resource type="Texture2D" uid="uid://00d40dktyy2w" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Smoke Animation Frames/Zombie-Tileset---_0322_Capa-323.png" id="3_dx25o"]
+[ext_resource type="Texture2D" uid="uid://b1or8ohh1mcuo" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Smoke Animation Frames/Zombie-Tileset---_0323_Capa-324.png" id="4_ihtlm"]
+[ext_resource type="Texture2D" uid="uid://dukadmkdp2wf4" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Smoke Animation Frames/Zombie-Tileset---_0324_Capa-325.png" id="5_ndhrs"]
+[ext_resource type="Texture2D" uid="uid://d1hhw1aem0d08" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Smoke Animation Frames/Zombie-Tileset---_0325_Capa-326.png" id="6_fg5cq"]
+[ext_resource type="Texture2D" uid="uid://cgu0slncjawn8" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Smoke Animation Frames/Zombie-Tileset---_0326_Capa-327.png" id="7_h8low"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l4ox6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aaoct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dx25o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ihtlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ndhrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fg5cq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h8low")
+}],
+"loop": true,
+"name": &"smoke",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d4q08"]
+radius = 21.0
+
+[node name="SmokeArea" type="Area2D"]
+collision_layer = 256
+collision_mask = 4
+script = ExtResource("1_ptaf6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 3
+position = Vector2(-0.5, -1.4305115e-06)
+scale = Vector2(2.1874998, 2.1249998)
+sprite_frames = SubResource("SpriteFrames_l4ox6")
+animation = &"smoke"
+frame = 1
+frame_progress = 0.5842991
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d4q08")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

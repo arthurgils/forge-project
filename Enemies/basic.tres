@@ -1,16 +1,42 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://b581p0hnmx6sf"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=10 format=3 uid="uid://b581p0hnmx6sf"]
 
 [ext_resource type="Script" uid="uid://pt42gr6l0wsy" path="res://Scripts/enemy_data.gd" id="1_60bic"]
 [ext_resource type="Script" uid="uid://d4hqeye8q7r10" path="res://Scenes/weapon_module.gd" id="1_t0efa"]
-[ext_resource type="Resource" uid="uid://bvwjpqsvyajsp" path="res://Modules/ScatterBarrel.tres" id="2_7tnmi"]
 [ext_resource type="Resource" uid="uid://b4clpikq8m5kv" path="res://Modules/Fork.tres" id="3_1l7as"]
-[ext_resource type="Texture2D" uid="uid://cdq6x72rrd3ak" path="res://Assets/runner_enemy.png" id="3_7tnmi"]
+[ext_resource type="Texture2D" uid="uid://dtcg8qnax55w8" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0412_Capa-413.png" id="5_4t1bw"]
+[ext_resource type="Texture2D" uid="uid://ba43jait7mkek" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0413_Capa-414.png" id="6_n2mcj"]
+[ext_resource type="Texture2D" uid="uid://b8a4lh33qxdk4" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0415_Capa-416.png" id="7_554c0"]
+[ext_resource type="Texture2D" uid="uid://b2y7wnj7gg8ul" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0416_Capa-417.png" id="8_7rhn7"]
+[ext_resource type="Texture2D" uid="uid://bq01juajqg7q8" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0417_Capa-418.png" id="9_gocmq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7tnmi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_4t1bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n2mcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_554c0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7rhn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gocmq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
 
 [resource]
 script = ExtResource("1_60bic")
-sprite = ExtResource("3_7tnmi")
+sprite_frames = SubResource("SpriteFrames_7tnmi")
 sprite_scale = 1.5
 health = 15.0
 module_drop_chance = 0.3
-modules_pool = Array[ExtResource("1_t0efa")]([ExtResource("2_7tnmi"), ExtResource("3_1l7as")])
+modules_pool = Array[ExtResource("1_t0efa")]([ExtResource("3_1l7as")])
 metadata/_custom_type_script = "uid://pt42gr6l0wsy"

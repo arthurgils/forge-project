@@ -8,10 +8,12 @@
 script = ExtResource("1_exk45")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.49999964, 1.5497208e-06)
-scale = Vector2(0.12109374, 0.12500001)
+position = Vector2(0.5, 1.9073486e-06)
+scale = Vector2(0.5, 0.5)
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_04u55")

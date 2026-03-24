@@ -2,7 +2,7 @@ extends Resource
 class_name EnemyData
 
 @export var enemy_name: String = 'Basic'
-@export var sprite: Texture2D
+@export var sprite_frames: SpriteFrames
 @export var sprite_scale: float = 1.0
 
 @export var health: float = 100.0

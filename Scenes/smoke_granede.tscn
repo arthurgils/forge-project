@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://0skyhutb6mm1"]
+
+[ext_resource type="Script" uid="uid://cyho0evyfmr7p" path="res://Scripts/smoke_granede.gd" id="1_wjd03"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wjd03"]
+radius = 11.045361
+
+[node name="SmokeGranede" type="Area2D"]
+collision_mask = 5
+script = ExtResource("1_wjd03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wjd03")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

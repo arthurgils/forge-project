@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ThrowableData" load_steps=4 format=3 uid="uid://b06jcosxsbxpm"]
+
+[ext_resource type="PackedScene" uid="uid://0skyhutb6mm1" path="res://Scenes/smoke_granede.tscn" id="1_ahnpo"]
+[ext_resource type="Script" uid="uid://c6t7cqk82lr6r" path="res://Scripts/throwable.gd" id="1_pdppr"]
+[ext_resource type="Texture2D" uid="uid://kvkmia4urcrr" path="res://Assets/drone.png" id="1_xgjf4"]
+
+[resource]
+script = ExtResource("1_pdppr")
+throwable_name = "Smoke"
+icon = ExtResource("1_xgjf4")
+projectile_scene = ExtResource("1_ahnpo")
+throw_speed = 350.0
+cooldown = 4.0
+smoke_duration = 5.0
+metadata/_custom_type_script = "uid://c6t7cqk82lr6r"

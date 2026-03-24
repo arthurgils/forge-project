@@ -32,6 +32,8 @@ func fire(owner: Node2D, target: Node2D):
 		var dir = direction.rotated(angle_offset)
 		
 		var shot = shot_scene.instantiate()
+		var shot_animation = shot.get_child(0)
+		shot_animation.play("shot")
 		shot.global_position = owner.global_position
 		shot.direction = dir
 		shot.speed = projectiles_speed

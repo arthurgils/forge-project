@@ -1,8 +1,14 @@
 extends Node2D
 
 @export var game_manager: GameManager
+@export var level: Node2D
+
+var level_data: LevelData
 
 var spawn_timer = 0.0
+
+func _ready():
+	level_data = level.level_data
 
 func _process(delta):
 	if game_manager.phase_finished:

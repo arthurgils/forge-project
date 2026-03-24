@@ -8,6 +8,7 @@ specular_color = Color(0.98819846, 0.32672873, 1, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc6vj"]
 
 [node name="ModuleDrop" type="Area2D"]
+scale = Vector2(0.5, 0.5)
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("1_fqtso")

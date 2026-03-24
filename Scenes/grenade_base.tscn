@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://lqnkyxwg4a1j"]
+
+[node name="grenade_base" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

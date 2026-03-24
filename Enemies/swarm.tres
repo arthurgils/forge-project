@@ -1,17 +1,35 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://boqpsqcwbbrli"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=9 format=3 uid="uid://boqpsqcwbbrli"]
 
 [ext_resource type="Script" uid="uid://pt42gr6l0wsy" path="res://Scripts/enemy_data.gd" id="1_lr8na"]
 [ext_resource type="Script" uid="uid://d4hqeye8q7r10" path="res://Scenes/weapon_module.gd" id="1_mga4m"]
 [ext_resource type="Resource" uid="uid://ceuy6uv4cruqj" path="res://Modules/Pierce.tres" id="2_r405o"]
 [ext_resource type="Resource" uid="uid://b4clpikq8m5kv" path="res://Modules/Fork.tres" id="3_ldgvq"]
-[ext_resource type="Texture2D" uid="uid://8u27j1v3ftmy" path="res://Assets/swarm_enemy.png" id="3_r405o"]
+[ext_resource type="Texture2D" uid="uid://ccjas1eh85chi" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Black Bird Flying and Ground Eating Animation Frames/Zombie-Tileset---_0309_Capa-310.png" id="5_fgnxh"]
+[ext_resource type="Texture2D" uid="uid://cw2jo2u2fclma" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Black Bird Flying and Ground Eating Animation Frames/Zombie-Tileset---_0310_Capa-311.png" id="6_8i0uj"]
+[ext_resource type="Texture2D" uid="uid://csqlctg831thk" path="res://Assets/Zombie Apocalypse Tileset/Zombie Apocalypse Tileset/Organized separated sprites/Black Bird Flying and Ground Eating Animation Frames/Zombie-Tileset---_0311_Capa-312.png" id="7_raqny"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r405o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fgnxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8i0uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_raqny")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
 
 [resource]
 script = ExtResource("1_lr8na")
 enemy_name = "Swarm"
-sprite = ExtResource("3_r405o")
+sprite_frames = SubResource("SpriteFrames_r405o")
 health = 10.0
 damage = 3.0
 module_drop_chance = 0.3
 modules_pool = Array[ExtResource("1_mga4m")]([ExtResource("2_r405o"), ExtResource("3_ldgvq")])
-metadata/_custom_type_script = "uid://pt42gr6l0wsy"

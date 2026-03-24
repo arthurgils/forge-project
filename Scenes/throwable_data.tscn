@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsmudyeda5dmt"]
+
+[ext_resource type="Script" uid="uid://c6t7cqk82lr6r" path="res://Scripts/throwable.gd" id="1_davt7"]
+
+[node name="ThrowableData" type="ResourcePreloader"]
+script = ExtResource("1_davt7")

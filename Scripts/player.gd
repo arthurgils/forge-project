@@ -36,6 +36,11 @@ func _ready():
 	emit_signal("level_up", level, xp, xp_to_next)
 
 
+func _process(delta):
+	if Input.is_action_just_pressed("Throw"):
+		$ThrowableController.try_throw(self)
+
+
 func _physics_process(delta):
 	var input = Vector2(
 		Input.get_action_strength("Right") - Input.get_action_strength("Left"),
@@ -44,6 +49,40 @@ func _physics_process(delta):
 	velocity = input * speed
 	move_and_slide()
 	
+	update_animation(input)
+
+
+func update_animation(direction: Vector2):
+	if direction != Vector2.ZERO:
+		last_direction = direction.normalized()
+	
+	var anim_sprite = $Sprite2D
+	
+	if direction == Vector2.ZERO:
+		play_idle(anim_sprite)
+	else:
+		play_walk(anim_sprite, direction)
+		
+
+func play_walk(anim_sprite: AnimatedSprite2D, dir: Vector2):
+	if abs(dir.x) > abs(dir.y):
+		# Movimento horizontal
+		anim_sprite.play("walk_side")
+		anim_sprite.flip_h = dir.x < 0
+	else:
+		# Movimento vertical
+		if dir.y > 0:
+			anim_sprite.play("walk_down")
+		else:
+			anim_sprite.play("walk_up")
+
+
+var last_direction: Vector2 = Vector2.DOWN
+
+func play_idle(anim_sprite: AnimatedSprite2D):
+	anim_sprite.play("idle")
+			
+			
 	#if Input.is_action_just_pressed("Shoot"):
 		#print("fire")
 		#fire()
