@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddid6lwwp6em7"]
+
+[ext_resource type="Script" uid="uid://y4i6x04smvrj" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://des35tjbr4ojq" path="res://Assets/character1.png" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://bl638e6n5avxd" path="res://Scenes/weapon.tscn" id="3_6t5aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0iea"]
+size = Vector2(24, 28)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 5
+collision_layer = 2
+collision_mask = 24
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_6t5aa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v0iea")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[node name="Weapon" parent="." instance=ExtResource("3_6t5aa")]

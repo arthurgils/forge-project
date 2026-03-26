@@ -12,5 +12,4 @@ sprite_scale = 1.5
 health = 60.0
 damage = 15.0
 module_drop_chance = 0.2
-spawn_after = 60.0
 metadata/_custom_type_script = "uid://pt42gr6l0wsy"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://n2nlltnlk8nw"]
+
+[ext_resource type="Texture2D" uid="uid://bkbqw5nr1bmkn" path="res://Assets/chao1.png" id="1_ymmlb"]
+
+[node name="Ground1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ymmlb")

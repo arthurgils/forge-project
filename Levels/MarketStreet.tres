@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=5 format=3 uid="uid://dwx43v3r2deqy"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://dwx43v3r2deqy"]
 
-[ext_resource type="Script" path="res://Scripts/level_data.gd" id="1_khr6t"]
+[ext_resource type="Script" uid="uid://b5kvvbxp0sw83" path="res://Scripts/level_data.gd" id="1_khr6t"]
 [ext_resource type="Script" uid="uid://pt42gr6l0wsy" path="res://Scripts/enemy_data.gd" id="1_kl4ya"]
 [ext_resource type="Resource" uid="uid://b581p0hnmx6sf" path="res://Enemies/basic.tres" id="3_y5x4m"]
 [ext_resource type="Resource" uid="uid://boqpsqcwbbrli" path="res://Enemies/swarm.tres" id="4_may3m"]
+[ext_resource type="Resource" uid="uid://cn2sbcx4aljfx" path="res://Enemies/boss.tres" id="6_boss"]
 
 [resource]
 script = ExtResource("1_khr6t")
 enemies = Array[ExtResource("1_kl4ya")]([ExtResource("4_may3m"), ExtResource("3_y5x4m")])
 spawn_rate_decrease = 0.5
 max_enemies = 30
+boss_data = ExtResource("6_boss")
 metadata/_custom_type_script = "uid://b5kvvbxp0sw83"

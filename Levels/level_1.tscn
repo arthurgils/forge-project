@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://cohbfiy7gftpj"]
+[gd_scene load_steps=45 format=4 uid="uid://cohbfiy7gftpj"]
 
 [ext_resource type="Script" uid="uid://5p3wjgbjy6x3" path="res://Levels/level_1.gd" id="1_n0qsc"]
 [ext_resource type="Resource" uid="uid://dwx43v3r2deqy" path="res://Levels/MarketStreet.tres" id="2_dilhk"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bgboxl3gus047" path="res://Scenes/enemy_spawner.tscn" id="20_hsj5a"]
 [ext_resource type="PackedScene" uid="uid://dbo0ipi3rwqjf" path="res://Scenes/game_manager.tscn" id="21_w38ni"]
 [ext_resource type="PackedScene" uid="uid://ciwe7ut8jq0ln" path="res://Scenes/hud.tscn" id="22_uclwg"]
+[ext_resource type="PackedScene" uid="uid://win_screen_scene1" path="res://Scenes/win_screen.tscn" id="23_wscr1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_as0xv"]
 texture = ExtResource("3_77l7m")
@@ -155,3 +156,5 @@ shape = SubResource("RectangleShape2D_442u8")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MapBounds"]
 position = Vector2(1165, 324.25)
 shape = SubResource("RectangleShape2D_fxl23")
+
+[node name="WinScreen" parent="." instance=ExtResource("23_wscr1")]

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://boqpsqcwbbrli"]
+
+[ext_resource type="Script" uid="uid://pt42gr6l0wsy" path="res://Scripts/enemy_data.gd" id="1_lr8na"]
+[ext_resource type="Script" uid="uid://d4hqeye8q7r10" path="res://Scenes/weapon_module.gd" id="1_mga4m"]
+[ext_resource type="Resource" uid="uid://ceuy6uv4cruqj" path="res://Modules/Pierce.tres" id="2_r405o"]
+[ext_resource type="Resource" uid="uid://b4clpikq8m5kv" path="res://Modules/Fork.tres" id="3_ldgvq"]
+[ext_resource type="Texture2D" uid="uid://8u27j1v3ftmy" path="res://Assets/swarm_enemy.png" id="3_r405o"]
+
+[resource]
+script = ExtResource("1_lr8na")
+enemy_name = "Swarm"
+sprite = ExtResource("3_r405o")
+sprite_scale = 0.8
+health = 10.0
+damage = 3.0
+module_drop_chance = 0.3
+modules_pool = Array[ExtResource("1_mga4m")]([ExtResource("2_r405o"), ExtResource("3_ldgvq")])
+metadata/_custom_type_script = "uid://pt42gr6l0wsy"

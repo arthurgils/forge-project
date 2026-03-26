@@ -1,17 +1,11 @@
 extends CharacterBody2D
 
-signal died
-signal health_changed(current_hp: float, max_hp: float)
-
 @export var enemy_data: EnemyData
 var current_health: float
 var current_damage: float
-var base_speed: float
 var current_speed: float
 var current_module_drop_chance: float
 var current_modules_pool: Array[WeaponModule]
-
-var is_slowed = false
 
 @onready var player_ref = get_parent().get_node("Player")
 
@@ -22,52 +16,31 @@ func _ready():
 	if enemy_data == null:
 		push_error('No enemy data.')
 		return
-
-	if enemy_data.sprite_frames != null:
-		$Sprite2D.sprite_frames = enemy_data.sprite_frames
-	elif enemy_data.sprite != null:
-		var frames = SpriteFrames.new()
-		frames.add_animation("walk")
-		frames.add_frame("walk", enemy_data.sprite, 1.0)
-		$Sprite2D.sprite_frames = frames
-
-	$Sprite2D.scale = Vector2.ONE * enemy_data.sprite_scale
-
+		
+	if enemy_data.sprite != null:
+		$Sprite2D.texture = enemy_data.sprite
+	
+	# New pixel art assets are already properly sized (64-128px)
+	# sprite_scale from enemy_data controls relative size
+	# Base scale is 0.5 for all enemies, then multiplied by data scale
+	var base_scale = 0.5
+	$Sprite2D.scale = Vector2.ONE * base_scale * enemy_data.sprite_scale
+	
 	current_health = enemy_data.health
 	current_damage = enemy_data.damage
 	current_speed = enemy_data.speed
 	current_module_drop_chance = enemy_data.module_drop_chance
 	current_modules_pool = enemy_data.modules_pool
-	base_speed = enemy_data.speed
-
+	
 
 func _physics_process(delta):
 	var direction = (player_ref.global_position - global_position).normalized()
-	velocity = direction * current_speed
+	velocity = direction * enemy_data.speed
 	move_and_slide()
 
-	update_animation(direction)
 
-
-func update_animation(direction: Vector2):
-	if direction != Vector2.ZERO:
-		last_direction = direction.normalized()
-
-	var anim_sprite = $Sprite2D
-
-	play_walk(anim_sprite, direction)
-
-var last_direction: Vector2 = Vector2.DOWN
-
-func play_walk(anim_sprite: AnimatedSprite2D, dir: Vector2):
-	if abs(dir.x) > abs(dir.y):
-		anim_sprite.play("walk")
-		anim_sprite.flip_h = dir.x < 0
-
-
-func take_damage(amount: float):
+func take_damage(amount: int):
 	current_health -= amount
-	emit_signal("health_changed", current_health, enemy_data.health)
 	if current_health <= 0:
 		die()
 		player_ref.enemies_killed += 1
@@ -76,7 +49,6 @@ func take_damage(amount: float):
 func die():
 	drop_xp()
 	drop_module()
-	emit_signal("died")
 	queue_free()
 
 
@@ -89,28 +61,16 @@ func drop_xp():
 func drop_module():
 	if randf() > current_module_drop_chance:
 		return
-
+	
 	if current_modules_pool.is_empty():
 		return
-
+	
 	var module = current_modules_pool.pick_random()
 	var drop = preload("res://Scenes/module_drop.tscn").instantiate()
 	drop.global_position = global_position
 	drop.module = module
 	get_tree().current_scene.add_child(drop)
 	print("droped")
-
-
-func apply_smoke_effect(state: bool):
-	print("smoke state:", state)
-	print(current_speed)
-	is_slowed = state
-
-	if is_slowed:
-		current_speed = base_speed * 0.1
-		print(current_speed)
-	else:
-		current_speed = base_speed
 
 
 func _on_area_2d_body_entered(body):

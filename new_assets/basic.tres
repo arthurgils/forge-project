@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://b581p0hnmx6sf"]
+
+[ext_resource type="Script" uid="uid://pt42gr6l0wsy" path="res://Scripts/enemy_data.gd" id="1_60bic"]
+[ext_resource type="Script" uid="uid://d4hqeye8q7r10" path="res://Scenes/weapon_module.gd" id="1_t0efa"]
+[ext_resource type="Resource" uid="uid://bvwjpqsvyajsp" path="res://Modules/ScatterBarrel.tres" id="2_7tnmi"]
+[ext_resource type="Resource" uid="uid://b4clpikq8m5kv" path="res://Modules/Fork.tres" id="3_1l7as"]
+[ext_resource type="Texture2D" uid="uid://cdq6x72rrd3ak" path="res://Assets/runner_enemy.png" id="3_7tnmi"]
+
+[resource]
+script = ExtResource("1_60bic")
+sprite = ExtResource("3_7tnmi")
+sprite_scale = 1.0
+health = 15.0
+module_drop_chance = 0.3
+modules_pool = Array[ExtResource("1_t0efa")]([ExtResource("2_7tnmi"), ExtResource("3_1l7as")])
+metadata/_custom_type_script = "uid://pt42gr6l0wsy"

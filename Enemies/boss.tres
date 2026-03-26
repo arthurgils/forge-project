@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3 uid="uid://cn2sbcx4aljfx"]
+
+[ext_resource type="Script" uid="uid://d4hqeye8q7r10" path="res://Scenes/weapon_module.gd" id="1_332lc"]
+[ext_resource type="Script" uid="uid://pt42gr6l0wsy" path="res://Scripts/enemy_data.gd" id="1_boss01"]
+[ext_resource type="Texture2D" uid="uid://5lrqquj87bxy" path="res://icon.svg" id="2_boss02"]
+
+[resource]
+script = ExtResource("1_boss01")
+enemy_name = "Boss"
+sprite = ExtResource("2_boss02")
+health = 500.0
+speed = 40.0
+damage = 20.0
+xp_drop = 100.0
+module_drop_chance = 1.0
+metadata/_custom_type_script = "uid://pt42gr6l0wsy"
